@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Clase 26</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <main>
+
+        <form action="/" method="post" class="register-form">
+          <div class="form-control">
+            <% if(typeof usuario !='undefined'){ %>          
+            <p>Hola <%= usuario.nombre %>, elegiste el color <%= usuario.color %>, tu email es: <%= usuario.email %> 
+              <% } %>
+              <label>Nombre de usuario</label>
+              <input type="text" name="nombre" class="control">
+              <% if (locals.error && error.nombre){ %>
+                <div class="errores">
+                  <%= error.nombre.msg %> 
+                </div>
+            <%  } %>
+          </div>       
+         <div class="form-control">
+              <label for="color">Elige el color:</label>
+              <select id="color" name="color">
+                <option value="rojo">Rojo</option>
+                <option value="azul">Azul</option>
+                <option value="amarillo">Amarillo</option>
+                <option value="verde">Verde</option>
+              </select>
+          </div>
+          <div class="form-control">
+              <label>e-mail</label>
+              <input type="email" name="email" class="control" placeholder="example01@gmail.com">
+          </div>
+          <div class="form-control">
+              <label>Edad</label>
+              <input type="number" name="edad" class="control">
+          </div>        
+          <button type="submit" class="button">Guardar</button>     
+  
+      </form>
+
+    </main>
+
+  </body>
+
+</html>

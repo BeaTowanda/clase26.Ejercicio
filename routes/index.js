@@ -15,5 +15,6 @@ router.post("/", [
   check("color").isLength({min:4}).withMessage("Color NO válido"),
   check("edad").isNumeric().withMessage("Edad no válida")
 ], mainController.create);
+/* preguntar como sabe si está en el body */
 
 module.exports = router;
